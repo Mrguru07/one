@@ -1,159 +1,231 @@
-// PRODUCT DATA (10 each for Mobiles, Laptops, Watches)
-// All prices in INR
+// Product Data
+const products = {
+    mobiles: [
+        { id: 1, name: "iPhone 15 Pro", price: 134900, specs: "6.1-inch Display, A17 Pro, 48MP Camera", image: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400", badge: "New" },
+        { id: 2, name: "Samsung Galaxy S24 Ultra", price: 129999, specs: "6.8-inch, 200MP Camera, S Pen", image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400", badge: "Best Seller" },
+        { id: 3, name: "Google Pixel 8 Pro", price: 106999, specs: "6.7-inch, Tensor G3, AI Camera", image: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400", badge: "New" },
+        { id: 4, name: "OnePlus 12", price: 64999, specs: "6.82-inch, Snapdragon 8 Gen 3", image: "https://images.unsplash.com/photo-1616348436168-de43ad0db179?w=400", badge: "" },
+        { id: 5, name: "Xiaomi 14 Pro", price: 69999, specs: "Leica Camera, 120W Charging", image: "https://images.unsplash.com/photo-1678911820864-e5eac7aafa3d?w=400", badge: "" },
+        { id: 6, name: "Vivo X100 Pro", price: 89999, specs: "Zeiss Camera, Dimensity 9300", image: "https://images.unsplash.com/photo-1610792516307-ea5acd4c2b9c?w=400", badge: "" },
+        { id: 7, name: "Oppo Find X7 Ultra", price: 99999, specs: "1-inch Camera, 100W Charging", image: "https://images.unsplash.com/photo-1580910051074-3eb694886505?w=400", badge: "Premium" },
+        { id: 8, name: "Nothing Phone (2)", price: 44999, specs: "Glyph Interface, 50MP Camera", image: "https://images.unsplash.com/photo-1688056223815-1c5e7a1e2d7a?w=400", badge: "" },
+        { id: 9, name: "Motorola Edge 50 Pro", price: 38999, specs: "144Hz Display, 125W Charging", image: "https://images.unsplash.com/photo-1610945415292-d9bbf067e59c?w=400", badge: "" },
+        { id: 10, name: "Realme GT 6", price: 40999, specs: "Snapdragon 8s Gen 3, 120W", image: "https://images.unsplash.com/photo-1610945264803-c22e62d2a7b3?w=400", badge: "" }
+    ],
+    laptops: [
+        { id: 11, name: "MacBook Pro M3", price: 169900, specs: "14-inch, M3 Chip, 16GB RAM", image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400", badge: "New" },
+        { id: 12, name: "Dell XPS 15", price: 159990, specs: "Intel i9, 32GB RAM, RTX 4060", image: "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=400", badge: "Premium" },
+        { id: 13, name: "HP Spectre x360", price: 124999, specs: "2-in-1, OLED, Intel i7", image: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400", badge: "" },
+        { id: 14, name: "Lenovo Legion Pro 7", price: 189990, specs: "RTX 4080, i9, 32GB RAM", image: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400", badge: "Gaming" },
+        { id: 15, name: "Asus ROG Zephyrus", price: 139990, specs: "Ryzen 9, RTX 4070, 16GB", image: "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=400", badge: "" },
+        { id: 16, name: "Microsoft Surface Laptop 5", price: 114999, specs: "13.5-inch, Intel i7, 16GB", image: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400", badge: "" },
+        { id: 17, name: "Acer Swift Go 14", price: 74999, specs: "OLED, Intel i7, 16GB RAM", image: "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=400", badge: "" },
+        { id: 18, name: "MSI Stealth 16", price: 174990, specs: "RTX 4070, i9, 32GB RAM", image: "https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=400", badge: "Gaming" },
+        { id: 19, name: "Samsung Galaxy Book4", price: 89990, specs: "Ultra 7, 16GB, 512GB SSD", image: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400", badge: "" },
+        { id: 20, name: "ASUS Zenbook 14", price: 84990, specs: "OLED, Intel i7, 16GB RAM", image: "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=400", badge: "" }
+    ],
+    watches: [
+        { id: 21, name: "Apple Watch Ultra 2", price: 89990, specs: "49mm, GPS + Cellular, 36hrs", image: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400", badge: "Ultra" },
+        { id: 22, name: "Samsung Watch 6 Classic", price: 42990, specs: "47mm, Rotating Bezel", image: "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=400", badge: "" },
+        { id: 23, name: "Garmin Fenix 7", price: 64990, specs: "Solar Charging, Multi-sport", image: "https://images.unsplash.com/photo-1627483262112-039e9a0a0f16?w=400", badge: "Sport" },
+        { id: 24, name: "Google Pixel Watch 2", price: 34990, specs: "Fitbit Integration, 24hrs", image: "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=400", badge: "" },
+        { id: 25, name: "OnePlus Watch 2", price: 24999, specs: "100hr Battery, Dual Engine", image: "https://images.unsplash.com/photo-1627483262112-039e9a0a0f16?w=400", badge: "" },
+        { id: 26, name: "Amazfit T-Rex Ultra", price: 29999, specs: "Military Grade, 20 Days", image: "https://images.unsplash.com/photo-1627483262268-9c2b5b2834b5?w=400", badge: "Rugged" },
+        { id: 27, name: "Fire-Boltt Invincible", price: 4999, specs: "1.43 AMOLED, Bluetooth Calling", image: "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=400", badge: "" },
+        { id: 28, name: "Noise ColorFit Pro 6", price: 5499, specs: "1.96 Display, 7 Days Battery", image: "https://images.unsplash.com/photo-1627483262268-9c2b5b2834b5?w=400", badge: "" },
+        { id: 29, name: "boAt Xtend Smartwatch", price: 2799, specs: "1.69 HD, HR Monitor", image: "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=400", badge: "" },
+        { id: 30, name: "Titan Smart 4", price: 12990, specs: "Premium Metal, GPS, SpO2", image: "https://images.unsplash.com/photo-1627483262112-039e9a0a0f16?w=400", badge: "Premium" }
+    ]
+};
 
-const mobiles = [
-    { name: "iQOO Z9 Pro 5G", price: 28999, specs: "8GB RAM, 128GB, 50MP Camera", imgId: 15 },
-    { name: "Samsung Galaxy S24 FE", price: 64999, specs: "12GB RAM, 256GB, AI Camera", imgId: 26 },
-    { name: "OnePlus Nord 5", price: 32999, specs: "16GB RAM, 256GB, 100W Charging", imgId: 42 },
-    { name: "Xiaomi 14 Ultra", price: 89999, specs: "Leica Lens, 16GB+512GB", imgId: 55 },
-    { name: "Google Pixel 9", price: 71999, specs: "Tensor G4, 128GB, Pro Camera", imgId: 76 },
-    { name: "Realme GT 6T", price: 37999, specs: "Snapdragon 8s Gen3, 120W", imgId: 82 },
-    { name: "Vivo X Fold 3", price: 139999, specs: "Foldable, 12GB+512GB", imgId: 96 },
-    { name: "Nothing Phone (3)", price: 44999, specs: "Glyph Interface, 50MP", imgId: 108 },
-    { name: "Motorola Edge 50 Ultra", price: 52999, specs: "144Hz Curved, 125W", imgId: 120 },
-    { name: "Apple iPhone 16", price: 79999, specs: "A18 Bionic, 48MP, 256GB", imgId: 133 }
-];
-
-const laptops = [
-    { name: "MacBook Air M3", price: 114990, specs: "13.6-inch, 8GB/512GB", imgId: 20 },
-    { name: "Dell XPS 15", price: 159990, specs: "i9, 32GB RAM, RTX 4060", imgId: 30 },
-    { name: "HP Victus 16", price: 78990, specs: "Ryzen 7, 16GB, RTX 3050", imgId: 44 },
-    { name: "Lenovo Legion Pro 7", price: 189990, specs: "i9-14900HX, RTX 4080", imgId: 60 },
-    { name: "Asus ROG Zephyrus G14", price: 139990, specs: "Ryzen 9, 16GB, 1TB", imgId: 68 },
-    { name: "Acer Swift Go 14", price: 69990, specs: "OLED, i7, 16GB RAM", imgId: 84 },
-    { name: "MSI Stealth 16", price: 174990, specs: "i9, RTX 4070, 32GB", imgId: 99 },
-    { name: "Apple MacBook Pro 14", price: 189990, specs: "M3 Pro, 18GB/1TB", imgId: 113 },
-    { name: "Samsung Galaxy Book4 Ultra", price: 164990, specs: "Core Ultra 9, 32GB", imgId: 130 },
-    { name: "Microsoft Surface Laptop Studio 2", price: 204990, specs: "i7, 16GB, RTX 4050", imgId: 145 }
-];
-
-const watches = [
-    { name: "Apple Watch Series 9", price: 45990, specs: "GPS, 41mm, Always-On", imgId: 25 },
-    { name: "Samsung Galaxy Watch 6 Classic", price: 36990, specs: "47mm, Rotating Bezel", imgId: 37 },
-    { name: "Garmin Venu 3", price: 48990, specs: "AMOLED, GPS, 14 Days Battery", imgId: 52 },
-    { name: "Pixel Watch 2", price: 34990, specs: "Fitbit Integration", imgId: 64 },
-    { name: "OnePlus Watch 2", price: 24999, specs: "Dual Engine, 100hr Battery", imgId: 70 },
-    { name: "Amazfit T-Rex Ultra", price: 29999, specs: "Military Grade, 20-Day", imgId: 88 },
-    { name: "Fire-Boltt Invincible", price: 4999, specs: "1.43" AMOLED, Bluetooth Calling", imgId: 104 },
-    { name: "Noise ColorFit Pro 6", price: 5499, specs: "1.96" Display, 7 Days", imgId: 117 },
-    { name: "boAt Xtend Smartwatch", price: 2799, specs: "1.69" HD, HR Monitor", imgId: 125 },
-    { name: "Titan Smart 4", price: 12990, specs: "Premium Metal, GPS", imgId: 140 }
-];
-
-// Helper to generate image URL
-function getProductImage(imgId) {
-    return `https://picsum.photos/id/${imgId}/400/300`;
-}
+let cartCount = 0;
+let currentActiveNav = 'home';
 
 // Format price in INR
-function formatINR(price) {
+function formatPrice(price) {
     return `₹${price.toLocaleString('en-IN')}`;
 }
 
-// Toast notification system
-let toastTimeout = null;
-function showToast(message) {
-    const toastDiv = document.getElementById('toast');
-    if (!toastDiv) return;
-    toastDiv.style.opacity = '1';
-    toastDiv.style.transform = 'translateX(-50%) scale(1)';
-    toastDiv.innerText = message || '✨ Added to cart ✨';
-    if (toastTimeout) clearTimeout(toastTimeout);
-    toastTimeout = setTimeout(() => {
-        toastDiv.style.opacity = '0';
-    }, 2000);
+// Create product card HTML
+function createProductCard(product, category) {
+    return `
+        <div class="product-card" data-id="${product.id}" data-category="${category}">
+            <div class="product-image">
+                <img src="${product.image}" alt="${product.name}" loading="lazy">
+                ${product.badge ? `<div class="product-badge">${product.badge}</div>` : ''}
+            </div>
+            <div class="product-info">
+                <h3 class="product-name">${product.name}</h3>
+                <div class="product-specs">${product.specs}</div>
+                <div class="product-price">${formatPrice(product.price)} <small>incl. taxes</small></div>
+                <button class="add-to-cart" onclick="addToCart('${product.name}', ${product.price})">
+                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                </button>
+            </div>
+        </div>
+    `;
 }
 
-// Cart handler function
-function cartHandler(e) {
-    e.stopPropagation();
-    const btn = e.currentTarget;
-    const name = btn.getAttribute('data-name');
-    const price = btn.getAttribute('data-price');
-    if (name && price) {
-        showToast(`🛍️ ${name} added to cart • ${formatINR(parseInt(price))}`);
-        console.log(`[CART] Added ${name} - ${formatINR(parseInt(price))}`);
-    } else {
-        showToast(`✔️ Item added!`);
+// Render products
+function renderProducts() {
+    // Render mobiles
+    const mobilesGrid = document.getElementById('mobiles-grid');
+    if (mobilesGrid) {
+        mobilesGrid.innerHTML = products.mobiles.map(product => createProductCard(product, 'mobile')).join('');
+    }
+    
+    // Render laptops
+    const laptopsGrid = document.getElementById('laptops-grid');
+    if (laptopsGrid) {
+        laptopsGrid.innerHTML = products.laptops.map(product => createProductCard(product, 'laptop')).join('');
+    }
+    
+    // Render watches
+    const watchesGrid = document.getElementById('watches-grid');
+    if (watchesGrid) {
+        watchesGrid.innerHTML = products.watches.map(product => createProductCard(product, 'watch')).join('');
     }
 }
 
-// Attach event listeners to all cart buttons
-function attachCartListeners() {
-    const allButtons = document.querySelectorAll('.btn-cart');
-    allButtons.forEach(btn => {
-        btn.removeEventListener('click', cartHandler);
-        btn.addEventListener('click', cartHandler);
-    });
+// Add to cart function (global for onclick)
+window.addToCart = function(productName, price) {
+    cartCount++;
+    const cartCountElement = document.querySelector('.cart-count');
+    if (cartCountElement) {
+        cartCountElement.textContent = cartCount;
+    }
+    
+    showToast(`🛍️ ${productName} added to cart • ${formatPrice(price)}`);
+    console.log(`Added to cart: ${productName} - ${formatPrice(price)}`);
+};
+
+// Show toast notification
+function showToast(message) {
+    const toast = document.getElementById('toast');
+    if (!toast) return;
+    
+    toast.textContent = message;
+    toast.classList.add('show');
+    
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, 2000);
 }
 
-// Render products in specified grid container
-function renderProducts(products, containerId) {
-    const container = document.getElementById(containerId);
-    if (!container) return;
-    container.innerHTML = '';
-    
-    products.forEach((product) => {
-        const priceInr = formatINR(product.price);
-        const imgUrl = getProductImage(product.imgId);
-        
-        const card = document.createElement('div');
-        card.className = 'product-card';
-        card.innerHTML = `
-            <div class="img-wrapper">
-                <img class="product-img" src="${imgUrl}" alt="${product.name}" loading="lazy" onerror="this.src='https://placehold.co/400x300/1e5f7a/white?text=${encodeURIComponent(product.name)}'">
-            </div>
-            <div class="product-info">
-                <div class="product-name">${product.name}</div>
-                <div class="price">${priceInr} <small>incl. taxes</small></div>
-                <div class="spec">${product.specs}</div>
-                <button class="btn-cart" data-name="${product.name}" data-price="${product.price}">🛒 Add to Cart</button>
-            </div>
-        `;
-        container.appendChild(card);
-    });
-    
-    attachCartListeners();
-}
-
-// Handle image loading errors
-function setupImageErrorHandling() {
-    const allImgs = document.querySelectorAll('.product-img');
-    allImgs.forEach(img => {
-        img.addEventListener('error', function() {
-            if (!this.src.includes('placehold')) {
-                this.src = `https://placehold.co/400x300/2c3e50/white?text=Device+Image`;
-            }
+// Smooth scroll to section
+function smoothScrollTo(elementId) {
+    const element = document.getElementById(elementId);
+    if (element) {
+        element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
         });
+    }
+}
+
+// Update active navigation
+function updateActiveNav(sectionId) {
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href').substring(1);
+        if (href === sectionId) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
     });
 }
 
-// Smooth navigation for anchor links
-function setupSmoothNavigation() {
-    document.querySelectorAll('.nav-links a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+// Setup navigation
+function setupNavigation() {
+    // Navigation links
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
             e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const targetId = link.getAttribute('href').substring(1);
+            smoothScrollTo(targetId);
+            updateActiveNav(targetId);
+        });
+    });
+    
+    // Featured cards navigation
+    const featuredCards = document.querySelectorAll('.featured-card');
+    featuredCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const category = card.getAttribute('data-category');
+            if (category) {
+                smoothScrollTo(category);
+                updateActiveNav(category);
             }
         });
+    });
+    
+    // Hero buttons navigation
+    const shopNowBtn = document.querySelector('.btn-primary');
+    if (shopNowBtn) {
+        shopNowBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            smoothScrollTo('mobiles');
+            updateActiveNav('mobiles');
+        });
+    }
+    
+    const viewOffersBtn = document.querySelector('.btn-secondary');
+    if (viewOffersBtn) {
+        viewOffersBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            smoothScrollTo('featured');
+        });
+    }
+    
+    // Add scroll spy to update active nav
+    window.addEventListener('scroll', () => {
+        const sections = ['home', 'mobiles', 'laptops', 'watches'];
+        let current = '';
+        
+        for (const section of sections) {
+            const element = document.getElementById(section);
+            if (element) {
+                const rect = element.getBoundingClientRect();
+                if (rect.top <= 100 && rect.bottom >= 100) {
+                    current = section;
+                    break;
+                }
+            }
+        }
+        
+        if (current && current !== currentActiveNav) {
+            currentActiveNav = current;
+            updateActiveNav(current);
+        }
+    });
+    
+    // Add scroll to top button
+    const scrollTopBtn = document.createElement('div');
+    scrollTopBtn.className = 'scroll-top';
+    scrollTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    document.body.appendChild(scrollTopBtn);
+    
+    // Show/hide scroll to top button
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            scrollTopBtn.classList.add('show');
+        } else {
+            scrollTopBtn.classList.remove('show');
+        }
     });
 }
 
 // Initialize the website
 function init() {
-    renderProducts(mobiles, 'mobiles-grid');
-    renderProducts(laptops, 'laptops-grid');
-    renderProducts(watches, 'watches-grid');
-    setupSmoothNavigation();
-    
-    // Setup image error handling after a short delay to ensure all images are loaded
-    setTimeout(setupImageErrorHandling, 100);
-    
-    console.log("E-Commerce website loaded | 30 products total (10 each) with INR prices.");
+    renderProducts();
+    setupNavigation();
+    console.log('ElectroHub initialized! 30 products loaded.');
 }
 
-// Start the application when DOM is fully loaded
+// Start the application when DOM is ready
 document.addEventListener('DOMContentLoaded', init);
