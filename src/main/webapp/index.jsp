@@ -14,15 +14,15 @@
             <div class="container">
                 <div class="header-top-content">
                     <div class="logo">
-                        <i class="fas fa-bolt"></i>
+                        <em class="fas fa-bolt"></em>
                         <span>Electro<span>Market</span></span>
                         <span class="logo-dot">.in</span>
                     </div>
                     <div class="delivery-address">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <em class="fas fa-map-marker-alt"></em>
                         <div>
                             <span>Deliver to</span>
-                            <span>India <i class="fas fa-caret-down"></i></span>
+                            <span>India <em class="fas fa-caret-down"></em></span>
                         </div>
                     </div>
                     <div class="search-bar">
@@ -34,24 +34,24 @@
                         </select>
                         <input type="text" placeholder="Search for products, brands and more" id="searchInput">
                         <button class="search-btn" id="searchBtn">
-                            <i class="fas fa-search"></i>
+                            <em class="fas fa-search"></em>
                         </button>
                     </div>
                     <div class="header-actions">
                         <div class="lang-selector">
-                            <i class="fas fa-globe"></i>
+                            <em class="fas fa-globe"></em>
                             <span>EN</span>
                         </div>
                         <div class="account">
                             <span>Hello, Sign in</span>
-                            <span>Account & Lists <i class="fas fa-caret-down"></i></span>
+                            <span>Account & Lists <em class="fas fa-caret-down"></em></span>
                         </div>
                         <div class="returns">
                             <span>Returns</span>
                             <span>& Orders</span>
                         </div>
                         <div class="cart-icon">
-                            <i class="fas fa-shopping-cart"></i>
+                            <em class="fas fa-shopping-cart"></em>
                             <span class="cart-count">0</span>
                             <span>Cart</span>
                         </div>
@@ -63,9 +63,9 @@
             <div class="container">
                 <div class="nav-menu">
                     <div class="all-categories">
-                        <i class="fas fa-bars"></i>
+                        <em class="fas fa-bars"></em>
                         <span>All</span>
-                        <i class="fas fa-caret-down"></i>
+                        <em class="fas fa-caret-down"></em>
                     </div>
                     <a href="#mobiles" class="nav-link">Mobiles</a>
                     <a href="#laptops" class="nav-link">Laptops</a>
@@ -205,7 +205,7 @@
             <div class="container">
                 <div class="copyright-content">
                     <div class="footer-logo">
-                        <i class="fas fa-bolt"></i>
+                        <em class="fas fa-bolt"></em>
                         <span>ElectroMarket</span>
                         <span>.in</span>
                     </div>
